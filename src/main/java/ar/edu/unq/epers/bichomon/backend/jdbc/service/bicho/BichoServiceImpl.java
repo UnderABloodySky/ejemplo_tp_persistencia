@@ -73,8 +73,7 @@ public class BichoServiceImpl extends Service implements BichoService {
 
     @Override
     public Bicho evolucionar(String nombreEntrenador, Integer idBicho) {
-        return run(() -> {
-            Entrenador entrenadorRecuperado = this.entrenadorDao.recuperar(nombreEntrenador);
+        return run(() -> {            Entrenador entrenadorRecuperado = this.entrenadorDao.recuperar(nombreEntrenador);
             Bicho bichoRecuperado = this.bichoDao.recuperar(idBicho);
             if (entrenadorRecuperado.tieneBicho(idBicho)) {
                 bichoRecuperado.evolucionar();
